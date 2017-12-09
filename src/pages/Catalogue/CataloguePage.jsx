@@ -1,8 +1,11 @@
 import React from 'react';
 
-const CataloguePage = () => {
+const CataloguePage = (props) => {
   return (
-    <h1>Catalogue Page</h1>
+    <div>
+      {props.products ? 
+        props.products.map((product, idx) => <li key="idx">{product.name}</li>) : <h1>Loading</h1>}
+    </div>
   )
 }
 

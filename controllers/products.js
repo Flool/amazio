@@ -1,8 +1,11 @@
-var Product = require('../models/product');
+var Product = require('./../models/product');
 
 function index(req, res) {
-  console.log('hey');
-  // Product.find({}).then( (product) => console.log(product) )
+  console.log('In index action')
+  Product.find({}, function(err, data) {
+    console.log('yeehaw')
+    res.json(data)
+  })
 }
 
 function addItem(req, res) {
